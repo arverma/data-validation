@@ -1,0 +1,60 @@
+{
+  "job_name": "test_job",
+  "source": [
+    {
+      "name": "dataset1",
+      "storeType": "local",
+      "storeConfig": {
+        "path": "",
+        "format": "parquet"
+      }
+    }
+  ],
+  "sink": {
+    "path": "output/path"
+  },
+  "constraints": {
+    "isComplete": [
+      "col1"
+    ],
+    "isUnique": [
+      "col1"
+    ],
+    "areComplete": [
+      [
+        "col1",
+        "col2"
+      ]
+    ],
+    "isNonNegative": [
+      "col1",
+      "col2"
+    ],
+    "containsURL": [
+      "col1",
+      "col2"
+    ],
+    "containsEmail": [
+      "col1",
+      "col2"
+    ],
+    "isPositive": [
+      "col1",
+      "col2"
+    ],
+    "hasCompleteness": [
+      [
+        "col2",
+        0.5
+      ],
+      [
+        "col1",
+        1
+      ]
+    ],
+    "satisfies": [
+      "((col3+col4+col3) == (col3+col3))",
+      "(col3 >= 0)"
+    ]
+  }
+}
